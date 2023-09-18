@@ -35,10 +35,6 @@
     grid-column: startline / middleline;
 }
 
-.advBlock{
-    grid-column: middleline / endline;
-}
-
 .logo img{
     border-radius: 5px;
 }
@@ -102,6 +98,7 @@
 .advBlock{
     font-size: 16px;
     line-height: 22px;
+    grid-column: middleline / endline;
 }
 
 .advTitle{
