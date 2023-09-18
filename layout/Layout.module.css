@@ -1,0 +1,66 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: auto 230px minmax(320px, 1000px) auto;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+    gap: 40px 30px;
+    grid-template-areas: 
+    ". header header ."
+    ". sidebar body ."
+    "footer footer footer footer";
+}
+
+.header{
+    grid-area: header;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.body{
+    grid-area: body;
+
+    outline: none;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.skipLink{
+    position: fixed;
+    top: 10px;
+    left: 100px;
+
+    display: block;
+    overflow: hidden;
+
+    height: 0; /*Регулируем высотой для того чтобы элементом можно было управлять с клавиатуры.*/
+
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+.displayed{
+    height: auto;
+}
+
+@media (max-width: 885px){
+    .wrapper{
+        grid-template-columns: minmax(320px, 1fr);
+        grid-template-areas: 
+        "header"
+        "body"
+        "footer";
+        gap: 10px;
+    }
+    .sidebar{
+        display: none !important; /*!important - для повышения важности свойтсва чтобы не перебивало.*/
+    }
+
+    .body{
+        padding: 15px;
+    }
+}

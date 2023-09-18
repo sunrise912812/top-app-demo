@@ -1,0 +1,335 @@
+.product{
+    display: grid;
+    grid-template-columns: [startline] 70px [logoendline] 30px [titlestartline] calc(50% - 100px) [middleline] 1fr [pricestartline] auto [priceendline] 25px [creditstartline] auto [creditendline] 25px [ratestartline] auto [rateendline] auto [endline];
+
+    margin-top: 30px;
+    padding: 30px;
+}
+
+.logo{
+    grid-column: startline / logoendline;
+    grid-row: 1 / span 2;
+}
+
+.title, .tags {
+    grid-column: titlestartline / middleline;
+}
+
+.price, .priceTitle{
+    grid-column: pricestartline / priceendline;
+}
+
+.credit, .creditTitle {
+    grid-column: creditstartline / creditendline;
+}
+
+.raiting, .rateTitle{
+    grid-column: ratestartline / endline;
+}
+
+.hr, .description, .actions{
+    grid-column: startline / endline;
+}
+
+.feature{
+    grid-column: startline / middleline;
+}
+
+.advBlock{
+    grid-column: middleline / endline;
+}
+
+.logo img{
+    border-radius: 5px;
+}
+
+.title{
+    align-self: flex-end;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+}
+
+.price, .credit{
+    align-self: flex-end;
+
+    white-space: nowrap; /*Запрещаем перенос*/
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+
+.raiting{
+    align-self: flex-end;
+
+    white-space: nowrap; /*Запрещаем перенос*/
+}
+
+.category{
+    margin-top: 7px;
+}
+
+.month{
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.oldPrice{
+    margin-left: 5px;
+}
+
+.priceTitle, .creditTitle, .rateTitle{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+}
+
+.rateTitle a{
+    color: var(--primary);
+}
+
+.description{
+    margin-bottom: 15px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.advBlock{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.advTitle{
+    margin-bottom: 5px;
+
+    font-weight: 700;
+}
+
+.advantages, .advantages{
+    font-weight: 400;
+    
+}
+
+.advantages{
+    margin-bottom: 20px;
+    padding: 0px 15px;
+
+    border-left: 2px solid #1DC37E;
+}
+
+.disadvantages{
+    padding: 15px;
+
+    border-left: 2px solid var(--red);
+}
+
+.reviewButton{
+    margin-left: 20px;
+}
+
+.characteristic{
+    display: grid; 
+    align-items: baseline;
+
+    padding-right: 60px;
+
+    font-size: 16px;
+    line-height: 32px;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+}
+
+.characteristicName{
+    font-weight: 700;  
+}
+
+.characteristicDots{
+    margin-bottom: 5px;
+
+    border-bottom: 1px dashed var(--gray-light);
+}
+
+@media screen and (max-width:1320px){
+    .product{
+        grid-template-columns: 
+            70px  30px  auto 40px auto 40px 1fr;
+        grid-template-areas: 
+        "logo . title title title title title"
+        "logo . tags tags tags tags tags"
+        "price price price . credit . raiting"
+        "priceTitle priceTitle priceTitle . creditTitle . rateTitle"
+        "hr hr hr hr hr hr hr"
+        "description description description description description description description"
+        "feature feature feature feature feature feature feature"
+        "advBlock advBlock advBlock advBlock advBlock advBlock advBlock"
+        "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+        "actions actions actions actions actions actions actions";
+    }
+
+    .logo{
+        grid-area: logo;
+    }
+    
+    .title{
+        grid-area: title;
+    }
+
+    .tags{
+        grid-area: tags;
+
+        margin-bottom: 20px;
+    }
+
+    .price{
+        grid-area: price;
+    }
+
+    .credit{
+        grid-area: credit;
+    }
+
+    .raiting{
+        grid-area: raiting;
+    }
+
+    .priceTitle{
+        grid-area: priceTitle;
+    }
+
+    .creditTitle{
+        grid-area: creditTitle;
+    }
+
+    .rateTitle{
+        grid-area: rateTitle;
+    }
+
+    .hr{
+        grid-area: hr;
+    }
+
+    .description{
+        grid-area: description;
+    }
+
+    .feature{
+        grid-area: feature;
+
+        margin-bottom: 20px;
+    }
+
+    .advBlock{
+        grid-area: advBlock;
+    }
+
+    .hr2{
+        grid-area: hr2;
+    }
+
+    .actions{
+        grid-area: actions;
+    }
+}
+
+@media screen and (max-width:640px){
+    .product{
+        grid-template-columns: 
+            70px  30px 1fr;
+        grid-template-areas: 
+        "logo . title"
+        "logo . tags"
+        "priceTitle priceTitle price"
+        "creditTitle creditTitle credit"
+        "rateTitle rateTitle raiting"
+        "hr hr hr"
+        "description description description"
+        "feature feature feature"
+        "advBlock advBlock advBlock"
+        "hr2 hr2 hr2"
+        "actions actions actions";
+    }
+
+    .price{
+        margin-bottom: 10px;
+    }
+
+    .credit{
+        margin-bottom: 10px;
+    }
+
+    .raiting{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:480px){
+    .product{
+        grid-template-columns: 
+            1fr;
+        grid-template-areas: 
+        "logo"
+        "title"
+        "tags"
+        "price"
+        "priceTitle"
+        "credit"
+        "creditTitle"
+        "raiting"
+        "rateTitle"
+        "hr"
+        "description"
+        "feature"
+        "advBlock"
+        "hr2"
+        "actions";
+    }
+
+    .price{
+        margin-bottom: 0px;
+    }
+
+    .credit{
+        margin-bottom: 0px;
+    }
+
+    .raiting{
+        margin-bottom: 0px;
+    }
+
+    .priceTitle{
+        margin-bottom: 10px;
+    }
+
+    .creditTitle{
+        margin-bottom: 10px;
+    }
+
+    .rateTitle{
+        margin-bottom: 10px;
+    }
+
+    .reviewButton{
+        margin-left: 0px;
+    }
+
+    .moreButton{
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.reviews{
+    overflow: hidden;
+
+    padding: 30px;
+}
+
+
+
+
+
