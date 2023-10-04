@@ -45,7 +45,7 @@ function Home({ menu } : HomeProps) : JSX.Element {
         <Tag size='s' color='primary'>Подготовка макетов</Tag>
         <Tag size='s' color='green'>-10 000 ₽</Tag>
         <Raiting raiting={raiting} isEditable={true} setRaiting={setRaiting}/>
-        <Input placeholder='Test'/>
+        <Input placeholder='Test'/>x
         <TextArea placeholder='TextArea'/>
     </>
   );
